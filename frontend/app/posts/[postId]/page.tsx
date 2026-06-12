@@ -17,6 +17,7 @@ export default async function PostDetailPage({
   const { postId } = await params;
 
   const res = await fetch(`${process.env.FASTAPI_URL}/posts/${postId}`, {
+    next:{tags:["posts-list"],}
     cache: "no-store",
   });
 

@@ -12,6 +12,7 @@ export default async function PostsPage() {
   // ✅ Server Component → FastAPI 직접 호출 (Route Handler 경유 금지)
   const res = await fetch(`${process.env.FASTAPI_URL}/posts`, {
     next: { tags: ["posts-list"] },
+    cache: "no-store", // 항상 최신 데이터 — 게시글 목록은 자주 변경될 수 있음
   });
 
   if (!res.ok) {

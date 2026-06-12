@@ -12,7 +12,7 @@ from sqlalchemy.orm import (
     mapped_column,
     sessionmaker,
 )
-
+FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:3000")
 # ─── ① 데이터베이스 연결 설정 ────────────────────────────────────────────
 # blog.db 파일 기반의 SQLite 경로를 설정합니다.
 DATABASE_URL = "sqlite:///./blog.db"
